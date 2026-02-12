@@ -4,6 +4,6 @@ metadata:
   name: p3-service
 spec:
   ports:
-    - port: 8888
+    - port: 8080
   selector:
     app: argocluster
