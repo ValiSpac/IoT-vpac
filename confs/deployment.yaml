@@ -11,20 +11,19 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: wil42
+      app: p3-deployment
   template:
     metadata:
       labels:
-        app: wil42
+        app: p3-deployment
     spec:
       containers:
         - image: wil42/playground:v1
           name: wil42
+          imagePullPolicy: Always
           ports:
             - containerPort: 8888
-        imagePullPolicy: Always
-        name: playground
-        resources: {}
+          resources: {}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
