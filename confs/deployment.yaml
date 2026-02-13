@@ -4,9 +4,7 @@ metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
   generation: 1
-  labels:
-    app: wil42
-  name: wil42
+  name: p3-deployment
   namespace: dev
 spec:
   replicas: 1
@@ -21,6 +19,9 @@ spec:
     spec:
       containers:
         - image: wil42/playground:v1
+          name: wil42
+          ports:
+            - containerPort: 8888
         imagePullPolicy: Always
         name: playground
         resources: {}
