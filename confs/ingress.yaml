@@ -16,5 +16,4 @@ spec:
           service:
             name: p3-service
             port:
-              number: 8080
-
+              number: 8888
