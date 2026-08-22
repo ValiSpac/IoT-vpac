@@ -14,15 +14,34 @@ spec:
       labels:
         app: p3-deployment
     spec:
+      serviceAccountName: p3-app
+
+      securityContext:
+        # runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+
       containers:
         - image: wil42/playground:v2
           name: wil42
           imagePullPolicy: Always
           ports:
             - containerPort: 8888
-          resources: {}
+
+          securityContext:
+            allowPrivileageEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      securityContext: {}
 
