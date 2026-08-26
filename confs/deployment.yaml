@@ -22,8 +22,8 @@ spec:
           type: RuntimeDefault
 
       containers:
-        - image: wil42/playground:v2
-          name: wil42
+        - image: valispac/test_app
+          name: valispac
           imagePullPolicy: Always
           ports:
             - containerPort: 8888
