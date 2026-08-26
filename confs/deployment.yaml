@@ -22,7 +22,7 @@ spec:
           type: RuntimeDefault
 
       containers:
-        - image: valispac/test_app
+        - image: valispac/test_appi@sha256:9f58eb6d15f2cbc20f5b4532986888cbf4f127e5fbdf05fdfd8c77731909dca8
           name: valispac
           imagePullPolicy: Always
           ports:
